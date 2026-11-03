@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Map</title>
+
+  <!-- Loads the ArcGIS embeddable map component -->
+  <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 20px 40px;
+      background: #ffffff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #222;
+    }
+    .map-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      border: 1px solid #dddddd;
+    }
+    arcgis-embedded-map {
+      display: block;
+      width: 100%;
+      height: 600px;
+    }
+    .credit {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 16px;
+      color: #555555;
+    }
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <arcgis-embedded-map
+      item-id="f7169ad85d5a4399a8a611a1d79fd7c5"
+      theme="light"
+      time-zone-label-enabled
+      center="-123.11807711498184,49.261407909687314"
+      scale="144447.638572"
+      portal-url="https://www.arcgis.com">
+    </arcgis-embedded-map>
+  </div>
+
+  <p class="credit">By Isabel Thompson</p>
+</body>
+</html>
