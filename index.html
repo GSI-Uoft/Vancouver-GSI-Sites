@@ -5,58 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vancouver, BC Green Stormwater Infrastructure Sites</title>
 
-  <!-- Loads the ArcGIS embeddable map component -->
-  <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+  <script
+    type="module"
+    src="https://js.arcgis.com/5.1/embeddable-components/">
+  </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 30px 20px 40px;
       background: #ffffff;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       color: #222222;
+      font-family: Arial, Helvetica, sans-serif;
     }
-    h1 {
+
+    header {
+      padding: 40px 24px 30px;
       text-align: center;
-      font-size: 42px;
-      font-weight: 400;
-      margin: 30px 0 40px;
-      color: #222222;
     }
-    .map-container {
-      max-width: 1400px;
+
+    h1 {
       margin: 0 auto;
-      border: 1px solid #dddddd;
+      max-width: 1000px;
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.8px;
     }
+
+    main {
+      padding: 0 1in;
+    }
+
+    .map-container {
+      width: 100%;
+      border: 1px solid #d6d6d6;
+      overflow: hidden;
+    }
+
     arcgis-embedded-map {
       display: block;
       width: 100%;
-      height: 75vh;
+      height: 72vh;
       min-height: 500px;
     }
+
     footer {
+      padding: 28px 24px 32px;
       text-align: center;
-      margin-top: 24px;
-      font-size: 18px;
-      color: #555555;
+      font-size: 14px;
+      font-weight: 400;
+      color: #666666;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 30px 20px 24px;
+      }
+
+      main {
+        padding: 0 16px;
+      }
+
+      arcgis-embedded-map {
+        height: 65vh;
+        min-height: 450px;
+      }
     }
   </style>
 </head>
-<body>
-  <h1>Vancouver, BC Green Stormwater Infrastructure Sites</h1>
 
-  <div class="map-container">
-    <arcgis-embedded-map
-      item-id="f7169ad85d5a4399a8a611a1d79fd7c5"
-      theme="light"
-      heading-enabled
-      legend-enabled
-      time-zone-label-enabled
-      center="-123.11807711498184,49.261407909687314"
-      scale="144447.638572"
-      portal-url="https://www.arcgis.com">
-    </arcgis-embedded-map>
-  </div>
+<body>
+  <header>
+    <h1>Vancouver, BC Green Stormwater Infrastructure Sites</h1>
+  </header>
+
+  <main>
+    <div class="map-container">
+      <arcgis-embedded-map
+        item-id="f7169ad85d5a4399a8a611a1d79fd7c5"
+        theme="light"
+        heading-enabled
+        time-zone-label-enabled
+        center="-123.11807711498184,49.261407909687314"
+        scale="144447.638572"
+        portal-url="https://www.arcgis.com"
+        legend-enabled>
+      </arcgis-embedded-map>
+    </div>
+  </main>
 
   <footer>
     Map compiled by Isabel Thompson
